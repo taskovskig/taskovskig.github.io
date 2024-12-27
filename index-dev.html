@@ -1,177 +1,27 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="de0d9005-5fbd-48c6-bcb7-10c67badb796" data-blockingmode="auto"></script>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-153065073-2"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-        
-          gtag('config', 'UA-153065073-2');
-        </script>
-        <title>Sfera Technologies ... for the world ... for us</title>
-        <meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
-        <meta name="description" content="Sfera Technologies API for data ingestion of PM10/PM2.5 measurements from external sources and serverless solutions."/>
-        <meta name="keywords" content="sensors,measurements,ecology,micropython,esp32,esp8266,pm10,pm2.5"/>
-        <meta name="author" content="SferaTech"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-        <link rel="shortcut icon" type="image/icon" href="https://d2pyxmuv1f81p1.cloudfront.net/favicon.ico">
-        <link rel="apple-touch-icon" href="https://d2pyxmuv1f81p1.cloudfront.net/images/logo-180-180.png">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://d2pyxmuv1f81p1.cloudfront.net/css/callouts.css">
-    </head>
-    <body style="padding-top: 5px; text-align: center;" data-rendering="true">
-        <div class="container-fluid" style="width: 1400px;">
-            <div class="container-fluid p-1">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <a class="navbar-brand" href="#">
-                        <img src="https://d2pyxmuv1f81p1.cloudfront.net/images/logo-30-30.png" width="30" height="30" class="d-inline-block align-top" alt="Sfera Technologies API measurements">
-                        Sfera Technologies ... for the world
-                    </a>
-                    <div class="collapse navbar-collapse">
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://www.sferatechnologies.com/participate">Participate</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://www.sferatechnologies.com/sensors">Our IoT Things</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://www.sferatechnologies.com/sensors/charts/home" target="_blank">Sensors Measurements Charts</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://github.com/taskovskig/MicroPython/tree/master/AWS-IoT/ESP32" target="_blank">GitHub</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://www.sferatechnologies.com/1tl">1TL</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-            <div class="container-fluid" style="text-align: left;">
-                <div class="row">
-                    <div class="col-6 p-1">
-                        <div class="container-fluid" id="my-content">
-                            <h5>API for data ingestion of PM10/PM2.5 measurements from external sources</h5>
-                            <p id="p1">
-                                Are you technology enthusiast and eco activist? Having DIY PM10/PM2.5 station? You want to share your collected data to the world? You've come to the right place.
-                                <br>
-                                What we do is collect data from DIY PM10/PM2.5 stations that are not part of <a href="https://pulse.eco" target="_blank">Pulse.eco</a>, or <a href="https://luftdaten.info/en/home-en/" target="_blank">Luftdaten</a> projects. We transform the data in our ETL pipeline and present the transformed data via publicly acessible <a href="https://sensors.sferatechnologies.com/measurements/public" target="_blank">API Endpoint</a> in the form of aggregated measurements from the previous hour. The endpoint may be used from other services like <a href="https://getaircare.com/" target="_blank">AirCare</a>.
-                            </p>
-                            <h6>How to participate?</h6>
-                            <p id="p3">
-                                You provide the info about the station and data preferably in JSON format via your API endpoint. We model the station based on your info and the data itself. Once the basic tests are performed and successful, we mark your station as being ready for data ingestion. Go to <a href="https://www.sferatechnologies.com/participate">Participation Form</a> to start making the world a better place to live.
-                            </p>
-                            <h5>Serverless Solutions</h5>
-                            <img height="32" src="https://d2pyxmuv1f81p1.cloudfront.net/images/serverless-solutions.svg" alt="Sfera Technologies ETL API Lambda DynamoDB API Gateway Serverless Solutions">
-                            <p>
-                                We are totally devoted to implementing serverless solution whenever possible. Stay tuned for decription of the underlying system powering our site.
-                            </p>
-                            <h5>WebSockets For The Real-Time Web</h5>
-                            <p>
-                                Feel free to use our WebSocket API endpoint in order to receive real-time measurement data from our IoT things, or just query the available data.
-                            </p>
-                            <h6>Using web browser</h6>
-                            <p>
-                                Go to <a href="https://www.sferatechnologies.com/sensors/real-time">proof-of-concept</a> for real-time web application. Tested with Firefox and Safari. Chrome does not work ... yet.
-                            </p>
-                            <h6>Using wscat</h6>
-                            <p>
-                                You can use a nifty little command line tool <a href="https://www.npmjs.com/package/wscat" target="_blank">wscat</a>.<br>
-                                <div class="callout">
-                                    <h6>Receiving push notifications</h6>
-                                    <p>
-                                        <small>
-                                            <span class="text-monospace text-muted">wscat -c wss://ws.sferatechnologies.com -H Sec-WebSocket-Protocol:wamp</span>
-                                        </small>
-                                    </p>
-                                </div>
-                                <div class="callout">
-                                    <h6>Query data</h6>
-                                    <p>
-                                        <small>
-                                            <span class="text-monospace text-muted">
-                                                wscat -c wss://ws.sferatechnologies.com<br>
-                                                Connected (press CTRL+C to quit)<br>
-                                                &lt; Welcome to SferaTechnologies' Websocket online service.<br>
-                                                Type {"action": "help"} to get basic usage guides.<br>
-                                                &gt; {"action": "help"}<br>
-                                                &lt; Available actions:<br>
-                                                {"action": "list-things"}<br>
-                                                {"action": "query-thing", "thing": "THING NAME}<br>
-                                                &gt;
-                                            </span>
-                                        </small>
-                                    </p>
-                                </div>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-6 p-1">
-                        <div class="row p-1">
-                            <h5>MicroPython powered IoT devices</h5>
-                            <p id="p6">
-                                We use MicroPython with ESP32 and ESP8266 based microcontrollers. Feel free to explore our <a href="https://github.com/taskovskig/MicroPython/tree/master/AWS-IoT" target="_blank">GitHub</a> repository.
-                            </p>
-                            <h6>PM10/PM2.5 measurements</h6>
-                            <p id="p7">
-                                SDS011 is an affordable PM10/PM2.5 sensor which coupled with ESP32 makes a small yet powerful station. Note that ESP8266 can not be used with SDS011 due to absence of write enabled UART port. Sample code <a href="https://github.com/taskovskig/MicroPython/tree/master/AWS-IoT/ESP32" target="_blank">here</a>.
-                            </p>
-                            <h6>Temperature, humidity and light intensity measurements</h6>
-                            <p id="p8">
-                                ESP8266 is the perfect match here. DHT22, DHT11 and KY-018 sensors work great. Sample code <a href="https://github.com/taskovskig/MicroPython/tree/master/AWS-IoT/ESP8266" target="_blank">here</a>.
-                            </p>
-                            <h6>Soil moisture measurements</h6>
-                            <p id="p9">
-                                ESP8266 sample code <a href="https://github.com/taskovskig/MicroPython/tree/master/AWS-IoT/ESP8266" target="_blank">here</a>. ESP32 sample code <a href="https://github.com/taskovskig/MicroPython/tree/master/AWS-IoT/ESP32" target="_blank">here</a>.
-                            </p>
-                        </div>
-                        <div class="row p-1">
-                            <h5>Eco friendly sites</h5>
-                        </div>
-                        <div class="row p-1">
-                            <div class="col-3 p-1">
-                                <div class="cintainer-fluid">
-                                    <a href="https://pulse.eco" target="_blank"><img src="https://pulse.eco/img/pulse-logo.svg" alt="Pulse.eco"></a>
-                                </div>
-                            </div>
-                            <div class="col-3 p-1">
-                                <div class="container-fluid bg-info">
-                                    <a href="https://luftdaten.info" target="_blank"><img width="100" height="100" src="https://luftdaten.info/wp-content/uploads/2018/01/luftdaten_logo_partner.png" alt="Luftdaten"></a>
-                                    <div class="position-relative fixed-bottom"><span class="text-white">Luftdaten</span></div>
-                                </div>
-                            </div>
-                            <div class="col-3 p-1">
-                                <div class="container-fluid bg-primary">
-                                    <a href="https://getaircare.com" target="_blank"><img height="100" src="https://getaircare.com/img/logo.png" alt="AriCare"></a>
-                                    <div class="position-relative fixed-bottom fixed-righ"><span class="text-white">AirCare</span></div>
-                                </div>
-                            </div>
-                            <div class="col-3 p-1">
-                                <div class="container-fluid">
-                                    &nbsp;
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <script type="application/ld+json">
-            {
-                "@context": "https://schema.org/",
-                "@type": "Thing",
-                "name": "DIY PM10/2.5 Station Data Ingestor",
-                "image": "https://d2pyxmuv1f81p1.cloudfront.net/images/serverless-solutions.svg",
-                "description": "API for data ingestion of PM10/PM2.5 measurements from external sources."
-            }
-        </script>
-    </body>
+  <head>
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="de0d9005-5fbd-48c6-bcb7-10c67badb796" data-blockingmode="auto"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-153065073-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-153065073-2');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/icon" href="https://d2pyxmuv1f81p1.cloudfront.net/favicon.ico">
+    <link rel="apple-touch-icon" href="https://d2pyxmuv1f81p1.cloudfront.net/images/logo-180-180.png">
+    <title>Sfera Technologies</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1>Dev stuff ...</h1>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+  </body>
 </html>
-
